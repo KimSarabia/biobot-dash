@@ -51,3 +51,39 @@ MODEL
         "serial": 0
     }
 },
+
+
+
+
+!bioprint['bioprint.print_data.deadPercent'] ||
+    !bioprint['bioprint.print_data.elasticity'] ||
+    !bioprint['bioprint.print_data.livePercent'] ||
+    !bioprint['bioprint.print_info.crosslinking.cl_duration'] ||
+    !bioprint['bioprint.print_info.crosslinking.cl_enabled'] ||
+    !bioprint['bioprint.print_info.crosslinking.cl_intensity'] ||
+    !bioprint['bioprint.print_info.files.input'] ||
+    !bioprint['bioprint.print_info.files.output'] ||
+    !bioprint['bioprint.print_info.pressure.extruder1'] ||
+    !bioprint['bioprint.print_info.pressure.extruder2'] ||
+    !bioprint['bioprint.print_info.resolution.layerHeight'] ||
+    !bioprint['bioprint.print_info.resolution.layerNum'] ||
+    !bioprint['bioprint.print_info.wellplate'] ||
+    !bioprint['bioprint.user_info.email'] ||
+    !bioprint['bioprint.user_info.serial']
+
+
+    deadPercent: bioprint['bioprint.print_data.deadPercent'],
+    elasticity: bioprint['bioprint.print_data.elasticity'],
+    livePercent: bioprint['bioprint.print_data.livePercent'],
+    cl_duration: bioprint['bioprint.print_info.crosslinking.cl_duration'],
+    cl_enabled: bioprint['bioprint.print_info.crosslinking.cl_enabled'],
+    cl_intensity: bioprint['bioprint.print_info.crosslinking.cl_intensity'],
+    input: bioprint['bioprint.print_info.files.input'],
+    output: bioprint['bioprint.print_info.files.output'],
+    extruder1: bioprint['bioprint.print_info.pressure.extruder1'],
+    extruder2: bioprint['bioprint.print_info.pressure.extruder2'],
+    layerHeight: bioprint['bioprint.print_info.resolution.layerHeight'],
+    layerNum: bioprint['bioprint.print_info.resolution.layerNum'],
+    wellplate: bioprint['bioprint.print_info.wellplate'],
+    email: bioprint['bioprint.user_info.email'],
+    serial: bioprint['bioprint.user_info.serial']

@@ -2,6 +2,10 @@
 
 var fs = require('fs');
 var path = require('path');
+var bcrypt = require('bcryptjs');
+var jwt = require('jwt-simple');
+
+const JWT_SECRET = "test";
 
 const DATAFILE = path.join(__dirname, '../bioprint-data.json');
 
@@ -21,11 +25,11 @@ exports.findAll = function(cb) {
     })
 };
 
-exports.findUser = function(id, cb) {
-    if (!id) return cb('Bioprint id required.');
+exports.findUser = function(user, cb) {
+    if (!user) return cb('Bioprint id required.');
     this.findAll((err, bioprints) => {
         if (err) return cb(err);
-        var bioprint = bioprints.filter(bioprint => bioprint.user_info.email === id)[0];
+        var bioprint = bioprints.filter(bioprint => bioprint.user_info.email === user)[0];
         cb(null, bioprint);
     });
 };

@@ -16,13 +16,51 @@ router.get('/', (req, res, next) => {
 
 router.get('/:id', (req, res, next) => {
     var id = req.params.id;
-
     Bioprint.findById(id, (err, bioprint) => {
         if (err || !bioprint) {
             return res.status(400).send(err || 'Bioprint not found.');
         }
         res.send(bioprint);
+    })
+});
+
+router.post('/', (req, res, next) => {
+  console.log(req.body, req.query, req.params);
+  
+  Bioprint.findAll((err, bioprints) => {
+      if (err) {
+          return res.status(400).send(err);
+      }
+      Bioprint.create(req.body, err => {
+          if (err) return res.status(400).send(err);
+          res.send();
+      });
+  });
+});
+
+router.put('/:id', (req, res, next) => {
+    var id = req.params.id;
+    Bioprint.findById(id, (err, bioprint) => {
+        if (err || !bioprint) {
+            return res.status(400).send(err || 'Bioprint not found.');
+        }
+        Bioprint.updateById(id, req.body, err => {
+            res.send(bioprint);
+        });
     });
-})
+});
+
+router.delete('/:id', (req, res, next) => {
+    var id = req.params.id;
+    Bioprint.findById(id, (err, bioprint) => {
+        if (err || !bioprint) {
+            return res.status(400).send(err || 'Bioprint not found.');
+        }
+        Bioprint.removeById(id, err => {
+            if (err) return res.status(400).send(err);
+            res.send(bioprint);
+        });
+    });
+});
 
 module.exports = router;

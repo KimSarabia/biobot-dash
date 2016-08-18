@@ -6,14 +6,14 @@ var Bioprint = require('../models/bioprint');
 var User = require('../models/user');
 
 
-router.get('/:id', (req, res, next) => {
-    var id = req.params.id;
+router.get('/:user', (req, res, next) => {
+    var user = req.params.user;
 
-    User.findUser(id, (err, bioprint) => {
+    User.findUser(user, (err, bioprint) => {
         if (err || !bioprint) {
-            return res.status(400).send(err || 'Bioprint not found.');
+            return res.status(400).send(err || 'User not found in database.');
         }
-        res.send(bioprint);
+        res.send(user);
     });
 })
 
