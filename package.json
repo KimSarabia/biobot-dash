@@ -7,6 +7,9 @@
     "start": "node app.js",
     "postinstall": "bower install"
   },
+  "engines":{
+  "node" :"4.3.1"
+  },
   "dependencies": {
     "body-parser": "~1.13.2",
     "bower": "^1.7.9",
