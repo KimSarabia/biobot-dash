@@ -73,23 +73,37 @@ exports.create = function(bioprint, cb) {
             return cb(err);
         }
         var newBioprint = {
-          deadPercent: bioprint['bioprint.print_data.deadPercent'],
-          elasticity: bioprint['bioprint.print_data.elasticity'],
-          livePercent: bioprint['bioprint.print_data.livePercent'],
-          cl_duration: bioprint['bioprint.print_info.crosslinking.cl_duration'],
-          cl_enabled: bioprint['bioprint.print_info.crosslinking.cl_enabled'],
-          cl_intensity: bioprint['bioprint.print_info.crosslinking.cl_intensity'],
-          input: bioprint['bioprint.print_info.files.input'],
-          output: bioprint['bioprint.print_info.files.output'],
-          extruder1: bioprint['bioprint.print_info.pressure.extruder1'],
-          extruder2: bioprint['bioprint.print_info.pressure.extruder2'],
-          layerHeight: bioprint['bioprint.print_info.resolution.layerHeight'],
-          layerNum: bioprint['bioprint.print_info.resolution.layerNum'],
-          wellplate: bioprint['bioprint.print_info.wellplate'],
-          email: bioprint['bioprint.user_info.email'],
-          serial: bioprint['bioprint.user_info.serial']
+          print_data: {
+            deadPercent: bioprint['bioprint.print_data.deadPercent'],
+            elasticity: bioprint['bioprint.print_data.elasticity'],
+            livePercent: bioprint['bioprint.print_data.livePercent']
+          },
+          print_info: {
+            crosslinking: {
+              cl_duration: bioprint['bioprint.print_info.crosslinking.cl_duration'],
+              cl_enabled: bioprint['bioprint.print_info.crosslinking.cl_enabled'],
+              cl_intensity: bioprint['bioprint.print_info.crosslinking.cl_intensity']
+            },
+            files: {
+              input: bioprint['bioprint.print_info.files.input'],
+              output: bioprint['bioprint.print_info.files.output'],
+            },
+            pressure: {
+              extruder1: bioprint['bioprint.print_info.pressure.extruder1'],
+              extruder2: bioprint['bioprint.print_info.pressure.extruder2'],
+            },
+            resolution: {
+              layerHeight: bioprint['bioprint.print_info.resolution.layerHeight'],
+              layerNum: bioprint['bioprint.print_info.resolution.layerNum'],
+            },
+            wellplate: bioprint['bioprint.print_info.wellplate'],
+        },
+          user_info: {
+            email: bioprint['bioprint.user_info.email'],
+            serial: bioprint['bioprint.user_info.serial']
+          }
         };
-        
+
         bioprints.push(newBioprint);
         fs.writeFile(DATAFILE, JSON.stringify(bioprints), err => {
             cb(err);

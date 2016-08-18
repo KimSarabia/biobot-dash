@@ -60,4 +60,34 @@
     "wellplate": "a",
     "email": "a",
     "serial": "a"
+}, {
+    "print_data": {
+        "deadPercent": "a",
+        "elasticity": "a",
+        "livePercent": "a"
+    },
+    "print_info": {
+        "crosslinking": {
+            "cl_duration": "a",
+            "cl_enabled": "a",
+            "cl_intensity": "a"
+        },
+        "files": {
+            "input": "a",
+            "output": "a"
+        },
+        "pressure": {
+            "extruder1": "a",
+            "extruder2": "a"
+        },
+        "resolution": {
+            "layerHeight": "a",
+            "layerNum": "a"
+        },
+        "wellplate": "a"
+    },
+    "user_info": {
+        "email": "a",
+        "serial": "a"
+    }
 }]
