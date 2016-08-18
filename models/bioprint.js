@@ -11,7 +11,6 @@ exports.findAll = function(cb) {
             cb(err);
             return;
         }
-
         try {
             var bioprints = JSON.parse(data);
         } catch (err) {
@@ -24,12 +23,9 @@ exports.findAll = function(cb) {
 
 exports.findById = function(id, cb) {
     if (!id) return cb('Bioprint id required.');
-
     this.findAll((err, bioprints) => {
         if (err) return cb(err);
-
         var bioprint = bioprints.filter(bioprint => bioprint.print_info.files.input === id)[0];
-
         cb(null, bioprint);
     });
 };

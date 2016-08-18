@@ -1,0 +1,53 @@
+MVP
+DASHBOARD UI
+Functionality
+1 - Render All Data in Table
+2 - Order Data by print_data.files.input
+    -Be able to order print data property from high to low
+    -Filter All Number Input
+    -Filter Range for example show only data > 60%
+3 - Paginate and List Number of Pages
+4 - Click Functionality on Table that will take you to a Print_Data Page
+5 - Print_Data Page will show print_data, print_info, files, resolution, wellplate, user_info
+6 - User Auth?
+6 - CRUD? (Last Two Pending based on Karan's Response)
+7 - Deploy
+
+Test with actual database
+
+Extra Features?
+-Animations
+-Angular Charts
+
+MODEL
+{
+    "print_data": {
+        "deadPercent": 67.31,
+        "elasticity": 3.31,
+        "livePercent": 30.1
+    },
+    "print_info": {
+        "crosslinking": {
+            "cl_duration": 0,
+            "cl_enabled": false,
+            "cl_intensity": 0
+        },
+        "files": {
+            "input": "file_29.gcode",
+            "output": "file_29_output.gcode"
+        },
+        "pressure": {
+            "extruder1": 118.0,
+            "extruder2": 27.0
+        },
+        "resolution": {
+            "layerHeight": 0.1,
+            "layerNum": 34
+        },
+        "wellplate": 1
+    },
+    "user_info": {
+        "email": "user0@gmail.com",
+        "serial": 0
+    }
+},
