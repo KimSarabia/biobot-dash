@@ -1,1 +1,95 @@
-[{"print_data":{"deadPercent":58.74,"elasticity":40.08,"livePercent":37.87},"print_info":{"crosslinking":{"cl_duration":0,"cl_enabled":false,"cl_intensity":0},"files":{"input":"file_3.gcode","output":"file_3_output.gcode"},"pressure":{"extruder1":38,"extruder2":97},"resolution":{"layerHeight":0.4,"layerNum":13},"wellplate":1},"user_info":{"email":"user0@gmail.com","serial":0}},{"print_data":{"deadPercent":"a","elasticity":"a","livePercent":"a"},"print_info":{"crosslinking":{"cl_duration":"a","cl_enabled":"a","cl_intensity":"a"},"files":{"input":"a","output":"a"},"pressure":{"extruder1":"a","extruder2":"a"},"resolution":{"layerHeight":"a","layerNum":"a"},"wellplate":"a"},"user_info":{"email":"a","serial":"a"}}]
+[
+  {
+        "print_data": {
+            "deadPercent": 84.01,
+            "elasticity": 49.28,
+            "livePercent": 7.02
+        },
+        "print_info": {
+            "crosslinking": {
+                "cl_duration": 22793,
+                "cl_enabled": true,
+                "cl_intensity": 24
+            },
+            "files": {
+                "input": "file_0.gcode",
+                "output": "file_0_output.gcode"
+            },
+            "pressure": {
+                "extruder1": 38.0,
+                "extruder2": 93.0
+            },
+            "resolution": {
+                "layerHeight": 0.8,
+                "layerNum": 48
+            },
+            "wellplate": 6
+        },
+        "user_info": {
+            "email": "user0@gmail.com",
+            "serial": 0
+        }
+    },
+    {
+        "print_data": {
+            "deadPercent": 53.09,
+            "elasticity": 47.42,
+            "livePercent": 37.42
+        },
+        "print_info": {
+            "crosslinking": {
+                "cl_duration": 0,
+                "cl_enabled": false,
+                "cl_intensity": 0
+            },
+            "files": {
+                "input": "file_1.gcode",
+                "output": "file_1_output.gcode"
+            },
+            "pressure": {
+                "extruder1": 109.0,
+                "extruder2": 113.0
+            },
+            "resolution": {
+                "layerHeight": 0.2,
+                "layerNum": 33
+            },
+            "wellplate": 96
+        },
+        "user_info": {
+            "email": "user0@gmail.com",
+            "serial": 0
+        }
+    },
+    {
+        "print_data": {
+            "deadPercent": 8.07,
+            "elasticity": 48.09,
+            "livePercent": 84.41
+        },
+        "print_info": {
+            "crosslinking": {
+                "cl_duration": 0,
+                "cl_enabled": false,
+                "cl_intensity": 0
+            },
+            "files": {
+                "input": "file_2.gcode",
+                "output": "file_2_output.gcode"
+            },
+            "pressure": {
+                "extruder1": 64.0,
+                "extruder2": 16.0
+            },
+            "resolution": {
+                "layerHeight": 0.1,
+                "layerNum": 27
+            },
+            "wellplate": 1
+        },
+        "user_info": {
+            "email": "user0@gmail.com",
+            "serial": 0
+        }
+    }
+]
