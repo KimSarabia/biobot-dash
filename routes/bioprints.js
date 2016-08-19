@@ -3,7 +3,6 @@
 var express = require('express');
 var router = express.Router();
 var Bioprint = require('../models/bioprint');
-var User = require('../models/user');
 
 router.get('/', (req, res, next) => {
     Bioprint.findAll((err, bioprints) => {
@@ -25,8 +24,6 @@ router.get('/:id', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  console.log(req.body, req.query, req.params);
-  
   Bioprint.findAll((err, bioprints) => {
       if (err) {
           return res.status(400).send(err);

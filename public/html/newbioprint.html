@@ -1,0 +1,110 @@
+<div class="jumbotron" style="background-image: url('http://i.imgur.com/NH1nLsV.png')">
+  <h1 style="color:white; font-weight: 900; text-shadow: 2px 2px #a9a9a9;">Add New Print</h1>
+  <p style="color:white; font-weight: 200;">This is where you can add a Bioprint</p>
+</div>
+<div class="container">
+        <form ng-submit="saveBioprint()" style="margin-bottom:10%;">
+
+                <div class="row">
+                    <legend>Print Data</legend>
+                    <div class="form-group label-floating">
+                        <label class="control-label" for="focusedInput1">Dead Percent</label>
+                        <input class="form-control" id="focusedInput1" type="text" ng-model="newBioprint.print_data.deadPercent" required>
+                    </div>
+                    <div class="form-group label-floating">
+                        <label class="control-label" for="focusedInput1">Elasticity</label>
+                        <input class="form-control" id="focusedInput1" type="text" ng-model="newBioprint.print_data.elasticity" required>
+                    </div>
+                    <div class="form-group label-floating">
+                        <label class="control-label" for="focusedInput1">Live Percent</label>
+                        <input class="form-control" id="focusedInput1" type="text" ng-model="newBioprint.print_data.livePercent" required>
+                    </div>
+                </div>
+                <br><br>
+                <div class="row">
+                  <legend>Print Info</legend>
+                    <div class="col-sm-12 col-sm-4 col-md-4 col-lg-4">
+                      <p>Crosslinking</p>
+                        <div class="form-group label-floating">
+                            <label class="control-label" for="focusedInput1">CL Duration</label>
+                            <input class="form-control" id="focusedInput1" type="text" ng-model="newBioprint.print_info.crosslinking.cl_duration" required>
+                        </div>
+                        <div class="form-group label-floating">
+                            <label class="control-label" for="focusedInput1">CL Enabled</label>
+                            <input class="form-control" id="focusedInput1" type="text" ng-model="newBioprint.print_info.crosslinking.cl_enabled" required>
+                        </div>
+                        <div class="form-group label-floating">
+                            <label class="control-label" for="focusedInput1">CL Intensity</label>
+                            <input class="form-control" id="focusedInput1" type="text" ng-model="newBioprint.print_info.crosslinking.cl_intensity" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-sm-4 col-md-4 col-lg-4">
+                      <p>Files</p>
+                        <div class="form-group label-floating">
+                            <label class="control-label" for="focusedInput1">Input</label>
+                            <input class="form-control" id="focusedInput1" type="text" ng-model="newBioprint.print_info.files.input" required>
+                        </div>
+                        <div class="form-group label-floating">
+                            <label class="control-label" for="focusedInput1">Output</label>
+                            <input class="form-control" id="focusedInput1" type="text" ng-model="newBioprint.print_info.files.output" required>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-sm-4 col-md-4 col-lg-4">
+                      <p>Pressure</p>
+                        <div class="form-group label-floating">
+                            <label class="control-label" for="focusedInput1">Extruder 1</label>
+                            <input class="form-control" id="focusedInput1" type="text" ng-model="newBioprint.print_info.pressure.extruder1" required>
+                        </div>
+                        <div class="form-group label-floating">
+                            <label class="control-label" for="focusedInput1">Extruder 2</label>
+                            <input class="form-control" id="focusedInput1" type="text" ng-model="newBioprint.print_info.pressure.extruder2" required>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+                <legend>Resolution</legend>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group label-floating">
+                            <label class="control-label" for="focusedInput1">Layer Height</label>
+                            <input class="form-control" id="focusedInput1" type="text" ng-model="newBioprint.print_info.resolution.layerHeight" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group label-floating">
+                            <label class="control-label" for="focusedInput1">Layer Number</label>
+                            <input class="form-control" id="focusedInput1" type="text" ng-model="newBioprint.print_info.resolution.layerNum" required>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+                <legend>Wellplate</legend>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group label-floating">
+                        <label class="control-label" for="focusedInput1">Wellplate</label>
+                        <input class="form-control" id="focusedInput1" type="text" ng-model="newBioprint.print_info.wellplate" required>
+                    </div>
+                  </div>
+                </div>
+                <legend>User Info</legend>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control"  placeholder="Email" ng-model="newBioprint.user_info.email" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Serial Number" ng-model="newBioprint.user_info.serial" required>
+                    </div>
+                </div>
+                <br><br>
+                <div class="row">
+                  <div class="form-group">
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align:center;">
+                          <button style="background-color:white;"type="button" class="btn btn-default" ui-sref="admindash">Cancel</button>
+                          <button style="background-color:white;" type="submit" class="btn btn-primary">Submit</button>
+                      </div>
+                  </div>
+                </div>
+            </fieldset>
+        </form>
+</div>

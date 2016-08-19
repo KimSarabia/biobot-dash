@@ -25,8 +25,21 @@ app.controller('admindashCtrl', function($scope, $state, admindashService) {
         }
         $scope.livePercentAvg = Math.ceil((($scope.totalLivePercent)/(res.data.length)) * 100) /100;
     });
+
 });
 
+app.controller('newBioprintCtrl', function ($scope, $state, admindashService, userdashService) {
+console.log('new Bioprint!');
+
+      $scope.saveBioprint = function() {
+          admindashService.saveBioprint($scope.newBioprint).then(res => {
+              $scope.bioprints.push(res.data);
+              console.log($scope.bioprints);
+              $scope.newBioprint = {};
+              console.log($scope.newBioprint)
+          });
+      };
+});
 
 app.controller('printerdashCtrl', function ($scope, $state, printerdashService) {
   console.log('printer dashboard!');

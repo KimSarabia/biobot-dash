@@ -30,6 +30,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: '/html/detailview.html',
             controller: 'detailviewCtrl'
         })
+        .state('newbioprint', {
+            url: '/html/newbioprint.html',
+            templateUrl: '/html/newbioprint.html',
+            controller: 'newBioprintCtrl'
+        })
     $urlRouterProvider.otherwise('/');
 
 })

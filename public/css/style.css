@@ -3,3 +3,7 @@ body {
   background-color: -webkit-linear-gradient(to left, #f85032 , #e73827);
   background-color: linear-gradient(to left, #f85032 , #e73827);
 }
+
+legend {
+  border-bottom-style: none;
+}
