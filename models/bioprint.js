@@ -16,7 +16,6 @@ exports.findAll = function(cb) {
         } catch (err) {
             return cb(err);
         }
-        bioprints.reverse();
         cb(null, bioprints);
     })
 };
@@ -45,10 +44,6 @@ exports.removeById = function(id, cb) {
 };
 
 exports.create = function(bioprint, cb) {
-  console.log(bioprint); // req.body
-
-  // {'bioprint.print_data.deadPercent': ..., 'bioprint.print_data.elasticity': ..., ......}
-
     if (!bioprint['bioprint.print_data.deadPercent'] ||
         !bioprint['bioprint.print_data.elasticity'] ||
         !bioprint['bioprint.print_data.livePercent'] ||
@@ -111,24 +106,26 @@ exports.create = function(bioprint, cb) {
     });
 };
 
+
 exports.updateById = function(id, newBioprint, cb) {
     if (!id) return cb('Bioprint id required.');
 
-    if (!newBioprint.print_data.deadPercent ||
-        !newBioprint.print_data.elasticity ||
-        !newBioprint.print_data.livePercent ||
-        !newBioprint.print_info.crosslinking ||
-        !newBioprint.print_info.crosslinking ||
-        !newBioprint.print_info.crosslinking ||
-        !newBioprint.print_info.files.input ||
-        !newBioprint.print_info.files.output ||
-        !newBioprint.print_info.pressure.extruder1 ||
-        !newBioprint.print_info.pressure.extruder2 ||
-        !newBioprint.print_info.resolution.layerHeight ||
-        !newBioprint.print_info.resolution.layerNum ||
-        !newBioprint.print_info.wellplate ||
-        !newBioprint.user_info.email ||
-        !newBioprint.user_info.serial
+    if (
+        !newBioprint['newBioprint.print_data.deadPercent'] ||
+        !newBioprint['newBioprint.print_data.elasticity'] ||
+        !newBioprint['newBioprint.print_data.livePercent'] ||
+        !newBioprint['newBioprint.print_info.crosslinking.cl_duration'] ||
+        !newBioprint['newBioprint.print_info.crosslinking.cl_enabled'] ||
+        !newBioprint['newBioprint.print_info.crosslinking.cl_intensity'] ||
+        !newBioprint['newBioprint.print_info.files.input'] ||
+        !newBioprint['newBioprint.print_info.files.output'] ||
+        !newBioprint['newBioprint.print_info.pressure.extruder1'] ||
+        !newBioprint['newBioprint.print_info.pressure.extruder2'] ||
+        !newBioprint['newBioprint.print_info.resolution.layerHeight'] ||
+        !newBioprint['newBioprint.print_info.resolution.layerNum'] ||
+        !newBioprint['newBioprint.print_info.wellplate'] ||
+        !newBioprint['newBioprint.user_info.email'] ||
+        !newBioprint['newBioprint.user_info.serial']
       ) {
         return cb('Missing fields');
     }

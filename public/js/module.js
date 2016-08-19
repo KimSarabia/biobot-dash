@@ -1,19 +1,24 @@
 
 'use strict';
 
-var app = angular.module('biobotsApp', ['ui.router']);
+var app = angular.module('biobotsApp', ['ui.router', 'ui.bootstrap', 'angular-loading-bar']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
-        .state('home', {
+        .state('main', {
             url: '/',
+            templateUrl: '/html/home.html',
+            controller: 'mainCtrl'
+        })
+        .state('home', {
+            url: '/home',
             templateUrl: '/html/home.html',
             controller: 'homeCtrl'
         })
         .state('admindash', {
-            url: '/home:devicetype',
-            templateUrl: '/html/home.html',
-            controller: 'homeCtrl'
+            url: '/admindash',
+            templateUrl: '/html/admindash.html',
+            controller: 'admindashCtrl'
         })
         .state('printerdash', {
             url: '/printerdash',
