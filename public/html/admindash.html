@@ -1,1 +1,86 @@
-<h1>Biobots Administrator View</h1>
+<div class="jumbotron" style="background-image: url('http://i.imgur.com/NH1nLsV.png')">
+  <h1 style="color:white; font-weight: 900; text-shadow: 2px 2px #a9a9a9;">Biobots Administrator View</h1>
+  <p style="color:white; font-weight: 200;">This is where you can track data regarding users and bioprints</p>
+</div>
+<div class="container">
+  <h3>User Summary</h3>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="well well-lg">
+        Number of Users:
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="well well-lg">
+        Top User:
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="well well-lg">
+        Newest User:
+      </div>
+    </div>
+  </div>
+
+  <h3>Bioprint Summary</h3>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="well well-lg">
+        Number of Bioprints:
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="well well-lg">
+        Average Dead Percent:
+      </div>
+    </div>
+    <div class="well well-lg">
+      Average Live Percent:
+    </div>
+  </div>
+
+  <div class="row">
+    <h3>Users</h3>
+    <table class="table table-striped table-hover ">
+    <thead>
+    <tr>
+      <th>Email</th>
+      <th>Serial</th>
+      <th>Detail</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Column content</td>
+      <td>Column content</td>
+      <td><a ui-sref="detailview" class="btn btn-info">Detail</a></td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="row">
+    <h3>Bioprints</h3>
+    <table class="table table-striped table-hover ">
+    <thead>
+    <tr>
+      <th>File No.</th>
+      <th>Dead Percent</th>
+      <th>Live Percent</th>
+      <th>Elasticity</th>
+      <th>Detail</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>1</td>
+      <td>Column content</td>
+      <td>Column content</td>
+      <td>Column content</td>
+      <td><a ui-sref="detailview" class="btn btn-info">Detail</a></td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>

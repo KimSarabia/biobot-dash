@@ -6,9 +6,13 @@ app.controller('homeCtrl', function ($scope, $state) {
   console.log('home!');
 });
 
-app.controller('admindashCtrl', function ($scope, $state, admindashService) {
-  console.log('admin dashboard!');
+app.controller('admindashCtrl', function($scope, admindashService) {
+    admindashService.getAllPrints().then(res => {
+        $scope.prints = res.data;
+        console.log($scope.prints);
+    });
 });
+
 
 app.controller('printerdashCtrl', function ($scope, $state, printerdashService) {
   console.log('printer dashboard!');
