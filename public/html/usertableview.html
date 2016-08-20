@@ -1,0 +1,25 @@
+<div class="jumbotron" style="background-image: url('http://i.imgur.com/NH1nLsV.png')">
+  <h1 style="color:white; font-weight: 900; text-shadow: 2px 2px #a9a9a9;">User Table View</h1>
+  <p style="color:white; font-weight: 200;">This is where you can see all users</p>
+</div>
+<div class="container">
+  <div class="row">
+    <h3>Users</h3>
+    <table class="table table-striped table-hover ">
+    <thead>
+    <tr>
+      <th>Email</th>
+      <th>Serial</th>
+      <th>Detail</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="user in uniqueUsers">
+      <td>{{user.email}}</td>
+      <td>{{user.serial}}</td>
+      <td><a ui-sref="detailview" class="btn btn-info">Detail</a></td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+</div>

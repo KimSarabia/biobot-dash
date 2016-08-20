@@ -12,8 +12,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('home', {
             url: '/home',
-            templateUrl: '/html/home.html',
-            controller: 'homeCtrl'
+            templateUrl: '/html/home.html'
         })
         .state('admindash', {
             url: '/admindash',
@@ -34,6 +33,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: '/html/newbioprint.html',
             templateUrl: '/html/newbioprint.html',
             controller: 'newBioprintCtrl'
+        })
+        .state('bioprinttableview', {
+            url: '/html/bioprinttableview.html',
+            templateUrl: '/html/bioprinttableview.html',
+            controller: 'bioprintTableViewCtrl'
+        })
+        .state('usertableview', {
+            url: '/html/usertableview.html',
+            templateUrl: '/html/usertableview.html',
+            controller: 'userTableViewCtrl'
         })
     $urlRouterProvider.otherwise('/');
 

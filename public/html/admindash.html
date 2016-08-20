@@ -9,8 +9,12 @@
     <div class="row">
       <div class="col-md-4">
         <div class="well well-lg">
-          Number of Users: {{uniqueUsersLength}}
+          Number of Users:
+          <h1 style="font-weight: 900">
+            {{uniqueUsersLength}}
+          </h1>
         </div>
+
       </div>
       <div class="col-md-4">
         <div class="well well-lg">
@@ -19,28 +23,21 @@
       </div>
       <div class="col-md-4">
         <div class="well well-lg">
-          Newest User: {{latestUser.email}}
+          Newest User:
+          <h4 style="font-weight: 900">
+            {{latestUser.email}}
+          </h1>
         </div>
       </div>
     </div>
   </section>
 
-<section>
-  <h3>Bioprint Summary</h3>
-    <div class="row">
-        <div class="col-lg-12">
-            <h6 class="bold">Go to File Number</h6>
-            <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">By File Number</button>
-                <ul class="dropdown-menu scrollable-menu" role="menu">
-                    <li ng-repeat="print in prints"><a href="#">{{print.print_info.files.input}}</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+  <div class="row">
+    <a ui-sref="usertableview" class="btn btn-raised btn-primary">Go To User Table</a>
+  </div>
 
 <section>
+  <h3>Bioprint Summary</h3>
   <div class="row" style="text-align:center;">
     <div class="col-md-4">
       <div class="well well-lg">
@@ -69,65 +66,6 @@
   </div>
 </section>
 
-<section>
-
-</section>
-
-  <div class="row">
-    <h3>Users</h3>
-    <table class="table table-striped table-hover ">
-    <thead>
-    <tr>
-      <th>Email</th>
-      <th>Serial</th>
-      <th>Detail</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="user in uniqueUsers">
-      <td>{{user.email}}</td>
-      <td>{{user.serial}}</td>
-      <td><a ui-sref="detailview" class="btn btn-info">Detail</a></td>
-    </tr>
-    </tbody>
-  </table>
-
-  </div>
-
-<section>
-  <div class="row">
-    <h3>Bioprints</h3>
-  </div>
-  <br>
-  <div class="row">
-    <a ui-sref="newbioprint" class="btn btn-raised btn-primary">Add New Bioprint</a>
-  </div>
-  <br><br>
-  <div class="row">
-    <table class="table table-striped table-hover ">
-    <thead>
-    <tr>
-      <th>File No.</th>
-      <th>Dead Percent</th>
-      <th>Live Percent</th>
-      <th>Elasticity</th>
-      <th>Detail</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr ng-repeat="print in prints">
-      <td>{{print.print_info.files.input}}</td>
-      <td>{{print.print_data.deadPercent}}</td>
-      <td>{{print.print_data.livePercent}}</td>
-      <td>{{print.print_data.elasticity}}</td>
-
-      <td><a ui-sref="detailview" class="btn btn-info">Detail</a></td>
-    </tr>
-    </tbody>
-  </table>
-    <button ng-repeat="page in pages" ng-click="getPaginatedPrints(page)">{{page + 1}}</button>
-    </div>
-</section>
-
-
+<div class="row">
+  <a ui-sref="bioprinttableview" class="btn btn-raised btn-primary">Go To Bioprint Table</a>
 </div>
