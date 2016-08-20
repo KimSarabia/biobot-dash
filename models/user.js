@@ -44,7 +44,6 @@ exports.getAllUsers = function(cb) {
         var bioprints = _(bioprints).map((item) => {
           return item.user_info;
         });
-        console.log(4321);
         cb(null, bioprints);
     });
 };

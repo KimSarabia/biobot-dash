@@ -44,23 +44,6 @@ exports.removeById = function(id, cb) {
 };
 
 exports.create = function(bioprint, cb) {
-  console.log('bioprint', bioprint);
-    console.log(!bioprint['bioprint.print_data.deadPercent'],
-        !bioprint['bioprint.print_data.elasticity'],
-        !bioprint['bioprint.print_data.livePercent'],
-        !bioprint['bioprint.print_info.crosslinking.cl_duration'],
-        !bioprint['bioprint.print_info.crosslinking.cl_enabled'],
-        !bioprint['bioprint.print_info.crosslinking.cl_intensity'],
-        !bioprint['bioprint.print_info.files.input'],
-        !bioprint['bioprint.print_info.files.output'],
-        !bioprint['bioprint.print_info.pressure.extruder1'],
-        !bioprint['bioprint.print_info.pressure.extruder2'],
-        !bioprint['bioprint.print_info.resolution.layerHeight'],
-        !bioprint['bioprint.print_info.resolution.layerNum'],
-        !bioprint['bioprint.print_info.wellplate'],
-        !bioprint['bioprint.user_info.email'],
-        !bioprint['bioprint.user_info.serial']
-      )
     if (!bioprint['bioprint.print_data.deadPercent'] ||
         !bioprint['bioprint.print_data.elasticity'] ||
         !bioprint['bioprint.print_data.livePercent'] ||

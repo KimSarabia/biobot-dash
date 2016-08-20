@@ -26,6 +26,18 @@ app.controller('admindashCtrl', function($scope, $state, admindashService, userd
         $scope.livePercentAvg = Math.ceil((($scope.totalLivePercent)/(res.data.length)) * 100) /100;
     });
 
+    admindashService.getAllUsers().then(res => {
+        $scope.users = res.data;
+          $scope.uniqueUsers = (res.data).reduceRight(function (r, a) {
+              r.some(function (b) { return a.email === b.email; }) || r.push(a);
+              return r;
+          }, []);
+          $scope.uniqueUsersLength = $scope.uniqueUsers.length
+          $scope.latestUser = $scope.uniqueUsers[0];
+
+    });
+
+
 });
 
 app.controller('newBioprintCtrl', function($scope, $state, admindashService, userdashService) {
@@ -34,10 +46,9 @@ console.log('new Bioprint!');
       $scope.saveBioprint = function() {
           admindashService.saveBioprint($scope.newBioprint).then(res => {
               $scope.bioprints.push(res.data);
-              console.log('$scope.bioprints:',$scope.bioprints);
               $scope.newBioprint = {};
-              console.log('$scope.newBioprint:',$scope.newBioprint)
           });
+          $state.go('admindash');
       };
 });
 

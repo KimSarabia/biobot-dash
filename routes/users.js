@@ -20,7 +20,6 @@ router.get('/:user', (req, res, next) => {
 
 
 router.get('/', (req, res, next) => {
-  console.log(1234);
     User.getAllUsers((err, bioprints) => {
         if (err) {
             return res.status(400).send(err);

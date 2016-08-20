@@ -25,7 +25,7 @@
         "wellplate": 6
     },
     "user_info": {
-        "email": "bob0@bob.com",
+        "email": "bob@bob.com",
         "serial": 0
     }
 }, {
@@ -208,7 +208,64 @@
         "email": "825",
         "serial": "825"
     }
+}, {
+    "print_data": {
+        "deadPercent": "903",
+        "elasticity": "903",
+        "livePercent": "903"
+    },
+    "print_info": {
+        "crosslinking": {
+            "cl_duration": "903",
+            "cl_enabled": "903",
+            "cl_intensity": "903"
+        },
+        "files": {
+            "input": "903",
+            "output": "903"
+        },
+        "pressure": {
+            "extruder1": "903",
+            "extruder2": "903"
+        },
+        "resolution": {
+            "layerHeight": "903",
+            "layerNum": "903"
+        },
+        "wellplate": "903"
+    },
+    "user_info": {
+        "email": "903",
+        "serial": "903"
+    }
+}, {
+    "print_data": {
+        "deadPercent": "907",
+        "elasticity": "907",
+        "livePercent": "907"
+    },
+    "print_info": {
+        "crosslinking": {
+            "cl_duration": "907",
+            "cl_enabled": "907",
+            "cl_intensity": "907"
+        },
+        "files": {
+            "input": "907",
+            "output": "907"
+        },
+        "pressure": {
+            "extruder1": "907",
+            "extruder2": "907"
+        },
+        "resolution": {
+            "layerHeight": "907",
+            "layerNum": "907"
+        },
+        "wellplate": "907"
+    },
+    "user_info": {
+        "email": "907",
+        "serial": "907"
+    }
 }]
-
-www.codegenie.co
-k1ngs.k1ngdom

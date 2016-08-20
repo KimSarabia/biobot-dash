@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-md-4">
         <div class="well well-lg">
-          Number of Users:
+          Number of Users: {{uniqueUsersLength}}
         </div>
       </div>
       <div class="col-md-4">
@@ -19,7 +19,7 @@
       </div>
       <div class="col-md-4">
         <div class="well well-lg">
-          Newest User:
+          Newest User: {{latestUser.email}}
         </div>
       </div>
     </div>
@@ -84,13 +84,14 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>Column content</td>
-      <td>Column content</td>
+    <tr ng-repeat="user in uniqueUsers">
+      <td>{{user.email}}</td>
+      <td>{{user.serial}}</td>
       <td><a ui-sref="detailview" class="btn btn-info">Detail</a></td>
     </tr>
     </tbody>
   </table>
+
   </div>
 
 <section>
