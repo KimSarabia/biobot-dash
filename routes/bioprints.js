@@ -3,6 +3,9 @@
 var express = require('express');
 var router = express.Router();
 var Bioprint = require('../models/bioprint');
+var dotize = require('dotize');
+
+
 
 router.get('/', (req, res, next) => {
     Bioprint.findAll((err, bioprints) => {
@@ -28,7 +31,8 @@ router.post('/', (req, res, next) => {
       if (err) {
           return res.status(400).send(err);
       }
-      Bioprint.create(req.body, err => {
+
+      Bioprint.create(dotize.convert({bioprint: req.body}), err => {
           if (err) return res.status(400).send(err);
           res.send();
       });

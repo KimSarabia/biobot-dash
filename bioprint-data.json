@@ -120,32 +120,95 @@
     }
 }, {
     "print_data": {
-        "deadPercent": "a",
-        "elasticity": "a",
-        "livePercent": "a"
+        "deadPercent": "y",
+        "elasticity": "y",
+        "livePercent": "y"
     },
     "print_info": {
         "crosslinking": {
-            "cl_duration": "a",
-            "cl_enabled": "a",
-            "cl_intensity": "a"
+            "cl_duration": "y",
+            "cl_enabled": "y",
+            "cl_intensity": "y"
         },
         "files": {
-            "input": "a",
-            "output": "a"
+            "input": "y",
+            "output": "y"
         },
         "pressure": {
-            "extruder1": "a",
-            "extruder2": "a"
+            "extruder1": "x",
+            "extruder2": "x"
         },
         "resolution": {
-            "layerHeight": "a",
-            "layerNum": "a"
+            "layerHeight": "x",
+            "layerNum": "x"
         },
-        "wellplate": "a"
+        "wellplate": "x"
     },
     "user_info": {
-        "email": "a",
-        "serial": "a"
+        "email": "y",
+        "serial": "y"
+    }
+}, {
+    "print_data": {
+        "deadPercent": "y",
+        "elasticity": "y",
+        "livePercent": "y"
+    },
+    "print_info": {
+        "crosslinking": {
+            "cl_duration": "y",
+            "cl_enabled": "y",
+            "cl_intensity": "y"
+        },
+        "files": {
+            "input": "y",
+            "output": "y"
+        },
+        "pressure": {
+            "extruder1": "x",
+            "extruder2": "x"
+        },
+        "resolution": {
+            "layerHeight": "x",
+            "layerNum": "x"
+        },
+        "wellplate": "x"
+    },
+    "user_info": {
+        "email": "y",
+        "serial": "y"
+    }
+}, {
+    "print_data": {
+        "deadPercent": "825",
+        "elasticity": "825",
+        "livePercent": "825"
+    },
+    "print_info": {
+        "crosslinking": {
+            "cl_duration": "825",
+            "cl_enabled": "825",
+            "cl_intensity": "825"
+        },
+        "files": {
+            "input": "825",
+            "output": "825"
+        },
+        "pressure": {
+            "extruder1": "825",
+            "extruder2": "825"
+        },
+        "resolution": {
+            "layerHeight": "825",
+            "layerNum": "825"
+        },
+        "wellplate": "825"
+    },
+    "user_info": {
+        "email": "825",
+        "serial": "825"
     }
 }]
+
+www.codegenie.co
+k1ngs.k1ngdom

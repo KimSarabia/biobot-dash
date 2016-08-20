@@ -7,7 +7,7 @@ app.controller('homeCtrl', function ($scope, $state) {
   console.log('home!');
 });
 
-app.controller('admindashCtrl', function($scope, $state, admindashService) {
+app.controller('admindashCtrl', function($scope, $state, admindashService, userdashService) {
   console.log('admin!');
 
     admindashService.getAllPrints().then(res => {
@@ -28,20 +28,20 @@ app.controller('admindashCtrl', function($scope, $state, admindashService) {
 
 });
 
-app.controller('newBioprintCtrl', function ($scope, $state, admindashService, userdashService) {
+app.controller('newBioprintCtrl', function($scope, $state, admindashService, userdashService) {
 console.log('new Bioprint!');
 
       $scope.saveBioprint = function() {
           admindashService.saveBioprint($scope.newBioprint).then(res => {
               $scope.bioprints.push(res.data);
-              console.log($scope.bioprints);
+              console.log('$scope.bioprints:',$scope.bioprints);
               $scope.newBioprint = {};
-              console.log($scope.newBioprint)
+              console.log('$scope.newBioprint:',$scope.newBioprint)
           });
       };
 });
 
-app.controller('printerdashCtrl', function ($scope, $state, printerdashService) {
+app.controller('printerdashCtrl', function ($scope, $state, userdashService) {
   console.log('printer dashboard!');
 });
 
