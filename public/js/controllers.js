@@ -7,24 +7,60 @@ app.controller('homeCtrl', function ($scope, $state) {
   console.log('home!');
 });
 
-app.controller('admindashCtrl', function($scope, $state, admindashService, userdashService) {
+app.controller('admindashCtrl', function($scope, $timeout ,$state, admindashService, userdashService) {
   console.log('admin!');
 
-    admindashService.getAllPrints().then(res => {
-        $scope.prints = res.data;
-        $scope.totalPrints = res.data.length;
 
-        $scope.totalDeadPercent = 0;
-        for( var i = 0; i < res.data.length; i++ ){
-            $scope.totalDeadPercent += parseInt( res.data[i].print_data.deadPercent, 10 );
-        }
-        $scope.deadPercentAvg = Math.ceil((($scope.totalDeadPercent)/(res.data.length)) * 100) /100;
-        $scope.totalLivePercent = 0;
-        for( var i = 0; i < res.data.length; i++ ){
-            $scope.totalLivePercent += parseInt( res.data[i].print_data.livePercent, 10 );
-        }
-        $scope.livePercentAvg = Math.ceil((($scope.totalLivePercent)/(res.data.length)) * 100) /100;
-    });
+    $scope.pages = [];
+    $scope.getPaginatedPrints = function(pageNumber){
+      admindashService.getPaginatedPrints(pageNumber).then(res => {
+          console.log(pageNumber);
+          console.log(res.data);
+          $scope.prints = res.data;
+          $scope.totalPrints = res.data.length;
+
+          $scope.totalDeadPercent = 0;
+          for( var i = 0; i < res.data.length; i++ ){
+              $scope.totalDeadPercent += parseInt( res.data[i].print_data.deadPercent, 10 );
+          }
+          $scope.deadPercentAvg = Math.ceil((($scope.totalDeadPercent)/(res.data.length)) * 100) /100;
+          $scope.totalLivePercent = 0;
+          for( var i = 0; i < res.data.length; i++ ){
+              $scope.totalLivePercent += parseInt( res.data[i].print_data.livePercent, 10 );
+          }
+          $scope.livePercentAvg = Math.ceil((($scope.totalLivePercent)/(res.data.length)) * 100) /100;
+          var currentPage = res.page_info.current_page;
+          var maxpage = res.page_info.max_page;
+
+          $scope.pages = [0];
+          if(maxpage >= 5){
+            if(currentPage <= 1 ){
+              $scope.pages = $scope.pages.concat([1,2,3]);
+            }else if(currentPage >=2 && currentPage < maxpage - 1){
+               $scope.pages = $scope.pages.concat([currentPage-1,currentPage,currentPage+1]);
+            }else{
+               $scope.pages = $scope.pages.concat([maxpage-3,maxpage-2,maxpage-1]);
+            }
+            $scope.pages.push(maxpage);
+          }else{
+            $scope.pages = [0,1,2,3];
+          }
+
+
+
+          //15
+
+          //8 ....1,  7,8,9 , 15
+
+          $timeout(()=>{
+            $scope.$apply();
+          });
+
+      }).catch(err=>console.log(err));
+    }
+
+    $scope.getPaginatedPrints(0);
+
 
     admindashService.getAllUsers().then(res => {
         $scope.users = res.data;
@@ -37,7 +73,7 @@ app.controller('admindashCtrl', function($scope, $state, admindashService, userd
 
     });
 
-    
+
 
 
 });

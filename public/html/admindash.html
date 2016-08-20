@@ -125,7 +125,8 @@
     </tr>
     </tbody>
   </table>
-  </div>
+    <button ng-repeat="page in pages" ng-click="getPaginatedPrints(page)">{{page + 1}}</button>
+    </div>
 </section>
 
 
