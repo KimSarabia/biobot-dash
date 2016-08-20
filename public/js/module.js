@@ -1,7 +1,7 @@
 
 'use strict';
 
-var app = angular.module('biobotsApp', ['ui.router', 'ui.bootstrap', 'angular-loading-bar', 'ngTable']);
+var app = angular.module('biobotsApp', ['ui.router', 'ui.bootstrap', 'angular-loading-bar']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
