@@ -31,7 +31,7 @@ app.controller('admindashCtrl', function($scope, $state, admindashService, userd
 });
 
 
-app.controller('bioprintTableViewCtrl', function($scope, $timeout ,$state, admindashService, userdashService) {
+app.controller('bioprintTableViewCtrl', function($scope, $timeout ,$state, admindashService, userdashService, detailService) {
     $scope.pages = [];
     $scope.getPaginatedPrints = function(pageNumber){
       admindashService.getPaginatedPrints(pageNumber).then(res => {
@@ -57,6 +57,14 @@ app.controller('bioprintTableViewCtrl', function($scope, $timeout ,$state, admin
       }).catch(err=>console.log(err));
     }
     $scope.getPaginatedPrints(0);
+
+    $scope.goToDetail = function(event, id){
+        console.log("go to:", `${id}`);
+        event.preventDefault();
+        detailService.setId(`${id}`);
+        $state.go('detailview');
+    }
+
 });
 
 app.controller('userTableViewCtrl', function($scope, $timeout ,$state, admindashService, userdashService) {
@@ -78,6 +86,38 @@ app.controller('newBioprintCtrl', function($scope, $state, admindashService, use
           $state.go('admindash');
       };
 });
+
+
+app.controller('detailCtrl', ['$scope','$state','$http','detailService','$sce',function($scope, $state, $http,detailService,$sce){
+  detailService.getBioprint().then(function(res){
+      $scope.bioprint = res.data;
+      var id = detailService.getId();
+      console.log('The id is:', `${id}`);
+      console.log($scope.bioprint);
+      var printObject = $scope.bioprint;
+    $scope.ready = true;
+    if(printObject){
+        $scope.deadPercent = printObject.print_data.deadPercent;
+        $scope.elasticity = printObject.print_data.elasticity;
+        $scope.livePercent = printObject.print_data.livePercent;
+        $scope.cl_duration = printObject.print_info.crosslinking.cl_duration;
+        $scope.cl_enabled = printObject.print_info.crosslinking.cl_enabled;
+        $scope.cl_intensity = printObject.print_info.crosslinking.cl_intensity;
+        $scope.input = printObject.print_info.files.input;
+        $scope.output = printObject.print_info.files.output;
+        $scope.extruder1 = printObject.print_info.pressure.extruder1;
+        $scope.extruder2 = printObject.print_info.pressure.extruder2;
+        $scope.layerHeight = printObject.print_info.resolution.layerHeight;
+        $scope.layerNum = printObject.print_info.resolution.layerNum;
+        $scope.wellplate = printObject.print_info.wellplate;
+        $scope.email = printObject.user_info.email;
+        $scope.serial = printObject.user_info.serial;
+      }
+  }).catch(function(err){
+    console.log(err);
+  });
+}]);
+
 
 app.controller('printerdashCtrl', function ($scope, $state, userdashService) {
   console.log('printer dashboard!');

@@ -5,7 +5,6 @@
     <a ui-sref="usertableview" class="btn btn-raised btn-primary">Go To User Table</a>
     <a ui-sref="admindash" class="btn btn-raised btn-primary">Go To Admin</a>
   </div>
-
 </div>
 <div class="container">
 <section>
@@ -34,14 +33,11 @@
       <td>{{print.print_data.deadPercent}}</td>
       <td>{{print.print_data.livePercent}}</td>
       <td>{{print.print_data.elasticity}}</td>
-
-      <td><a ui-sref="detailview" class="btn btn-info">Detail</a></td>
+      <td><a ng-click="goToDetail($event, print.print_info.files.input)"  class="btn btn-info">Detail</a></td>
     </tr>
     </tbody>
   </table>
     <button ng-repeat="page in pages" ng-click="getPaginatedPrints(page)">{{page + 1}}</button>
     </div>
 </section>
-
-
 </div>

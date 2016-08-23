@@ -27,7 +27,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('detailview', {
             url: '/html/detailview.html',
             templateUrl: '/html/detailview.html',
-            controller: 'detailviewCtrl'
+            controller: 'detailCtrl'
         })
         .state('newbioprint', {
             url: '/html/newbioprint.html',

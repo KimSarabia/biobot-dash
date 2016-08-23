@@ -1,12 +1,22 @@
-<div class="container">
+<div class="jumbotron" style="background-image: url('http://i.imgur.com/NH1nLsV.png')">
+  <h1 style="color:white; font-weight: 900; text-shadow: 2px 2px #a9a9a9;">Bioprint Details</h1>
+  <p style="color:white; font-weight: 200;">This is where you can see Bioprint Details</p>
+  <div class="row">
+    <a ui-sref="bioprinttableview" class="btn btn-raised btn-primary">Back to Bioprint Table</a>
+    <a ui-sref="usertableview" class="btn btn-raised btn-primary">Go To User Table</a>
+    <a ui-sref="admindash" class="btn btn-raised btn-primary">Go To Admin</a>
+  </div>
+</div>
+<div class="container" ng-if="ready">
   <h1>Detail View</h1
 
   <h4>Print Data</h4>
     <div class="row">
-        <div class="col-md-4">{{deadPercent}}</div>
-        <div class="col-md-4">{{elasticity}}</div>
-        <div class="col-md-4">{{livePercent}}</div>
+        <div class="col-md-4">Dead Percent: {{deadPercent}}</div>
+        <div class="col-md-4">Elasticity: {{elasticity}}</div>
+        <div class="col-md-4">Live Percent: {{livePercent}}</div>
     </div>
+    <br><br>
 
     <h4>Print Info</h4>
     <div class="row">
@@ -15,9 +25,9 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4">{{cl_duration}}</div>
-      <div class="col-md-4">{{cl_enabled}}</div>
-      <div class="col-md-4">{{cl_intensity}}</div>
+      <div class="col-md-4">cl_duration:{{cl_duration}}</div>
+      <div class="col-md-4">cl_enabled: {{cl_enabled}}</div>
+      <div class="col-md-4">cl_intensity: {{cl_intensity}}</div>
     </div>
     <div class="row">
       <div class="col-md-12">
@@ -25,8 +35,8 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6">{{input}}</div>
-      <div class="col-md-6">{{output}}</div>
+      <div class="col-md-6">input: {{input}}</div>
+      <div class="col-md-6">output: {{output}}</div>
     </div>
     <div class="row">
       <div class="col-md-12">
@@ -34,31 +44,34 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4">{{extruder1}}</div>
-      <div class="col-md-4">{{extruder2}}</div>
+      <div class="col-md-4">Extruder 1: {{extruder1}}</div>
+      <div class="col-md-4">Extruder 2: {{extruder2}}</div>
     </div>
+    <br><br>
     <div class="row">
       <div class="col-md-12">
         <h6>Resolution</h6>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6">{{layerHeight}}</div>
-      <div class="col-md-6">{{layerNum}}</div>
+      <div class="col-md-6">Layer Height: {{layerHeight}}</div>
+      <div class="col-md-6">Layer Number: {{layerNum}}</div>
     </div>
+    <br><br>
     <div class="row">
       <div class="col-md-12">
         <h6>Wellplate</h6>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-12">{{wellplate}}</div>
+      <div class="col-md-12">Wellplate: {{wellplate}}</div>
     </div>
-
+    <br><br>
     <div class="row">
       <h4>User Info</h4>
-      <p>Email</p>
-      <p>Serial</p>
+      <p>Email: {{email}}</p>
+      <p>Serial:{{serial}}</p>
     </div>
+    <br><br>
 
 </div>

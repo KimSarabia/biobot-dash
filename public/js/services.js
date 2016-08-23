@@ -4,7 +4,6 @@ var app = angular.module('biobotsApp');
 
 
 app.service('admindashService',function($http) {
-
     this.getAllPrints = () => {
         return $http.get('./api/bioprints').then(res=>{
             console.log("fetched bioprints");
@@ -51,6 +50,27 @@ app.service('admindashService',function($http) {
     };
 
 });
+
+app.factory('detailService',['$http',function($http){
+    var _id = "a";
+
+    return {
+        getId : function(){
+            return _id;
+        },
+        setId : function(id){
+            _id = id;
+        },
+        getBioprint : function(){
+            return   $http({
+                method:'GET',
+                url:`/api/bioprints/${_id}`
+              });
+        }
+    }
+}]);
+
+
 
 app.service('userdashService',function($http) {
     this.findByUser = () => {
